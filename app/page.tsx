@@ -1,65 +1,113 @@
-import Image from "next/image";
+'use client';
+
+import { Container, Title, Text, Button, Group, Stack, Box } from '@mantine/core';
+import Link from 'next/link';
+import { IconBrandGithub, IconMail, IconPhone } from '@tabler/icons-react';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Box style={{ minHeight: '100vh', backgroundColor: '#94a3b8' }}>
+      {/* Navigation */}
+      <Container size="lg" py="md">
+        <Group justify="space-between">
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <Title order={3} c="slate.7">AJ</Title>
+          </Link>
+          <Group gap="md">
+            <Link href="/" style={{ textDecoration: 'none' }}>
+              <Text fw={500} c="slate.5">Home</Text>
+            </Link>
+            <Link href="/projects" style={{ textDecoration: 'none' }}>
+              <Text fw={500} c="slate.5">Projects</Text>
+            </Link>
+            <Link href="/about" style={{ textDecoration: 'none' }}>
+              <Text fw={500} c="slate.5">About</Text>
+            </Link>
+            <Link href="/contact" style={{ textDecoration: 'none' }}>
+              <Text fw={500} c="slate.5">Contact</Text>
+            </Link>
+          </Group>
+        </Group>
+      </Container>
+
+      {/* Hero Section */}
+      <Container size="lg" py={80}>
+        <Stack gap="xl" align="center" style={{ textAlign: 'center' }}>
+          <Title 
+            order={1} 
+            size="3.5rem" 
+            fw={700} 
+            c="slate.7"
+            style={{ lineHeight: 1.2 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Ade-williams Joshua
+          </Title>
+          <Title 
+            order={2} 
+            size="1.5rem" 
+            fw={400} 
+            c="slate.5"
+            style={{ lineHeight: 1.5 }}
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            Full-Stack Developer & AI Engineer
+          </Title>
+          <Text 
+            size="lg" 
+            c="slate.6" 
+            maw={600}
+            style={{ lineHeight: 1.6 }}
+          >
+            Building Reusable Infrastructure & Modernizing Production Systems
+          </Text>
+          
+          <Text 
+            size="md" 
+            c="slate.6" 
+            maw={700}
+            style={{ lineHeight: 1.7 }}
+          >
+            Rapidly growing full-stack developer specializing in building reusable infrastructure and modernizing production systems. Currently contributing to AI research platforms while continuously expanding my skillset.
+          </Text>
+
+          <Group gap="md" mt="xl">
+            <Link href="/projects" style={{ textDecoration: 'none' }}>
+              <Button 
+                size="lg"
+                color="slate"
+                variant="filled"
+                radius="md"
+              >
+                View My Work
+              </Button>
+            </Link>
+            <Link href="/contact" style={{ textDecoration: 'none' }}>
+              <Button 
+                size="lg"
+                color="slate"
+                variant="outline"
+                radius="md"
+              >
+                Get In Touch
+              </Button>
+            </Link>
+          </Group>
+
+          {/* Skills Showcase */}
+          <Box mt={60} w="100%">
+            <Text size="sm" fw={600} c="slate.6" mb="md" ta="center">
+              Technologies I Work With
+            </Text>
+            <Group gap="xl" justify="center">
+              <Text size="sm" c="slate.5" fw={500}>React</Text>
+              <Text size="sm" c="slate.5" fw={500}>Next.js</Text>
+              <Text size="sm" c="slate.5" fw={500}>Python</Text>
+              <Text size="sm" c="slate.5" fw={500}>Rust</Text>
+              <Text size="sm" c="slate.5" fw={500}>AI/ML</Text>
+              <Text size="sm" c="slate.5" fw={500}>TypeScript</Text>
+            </Group>
+          </Box>
+        </Stack>
+      </Container>
+    </Box>
   );
 }
