@@ -4,7 +4,7 @@ A professional portfolio website showcasing my work as a full-stack developer an
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://your-portfolio-url.vercel.app) *(Update after deployment)*
+[View Live Portfolio](https://portfolio-nine-taupe-35.vercel.app/)
 
 ## ✨ Features
 
