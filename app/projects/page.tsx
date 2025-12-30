@@ -119,21 +119,21 @@ export default function ProjectsPage() {
                   WebkitBackdropFilter: 'blur(20px) saturate(200%)',
                   background: 'linear-gradient(135deg, rgba(203, 213, 225, 0.6) 0%, rgba(226, 232, 240, 0.75) 100%)',
                   boxShadow: '0 8px 16px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.1)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
+                  willChange: 'transform',
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden',
+                  WebkitFontSmoothing: 'antialiased',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.transform = 'translateY(-6px) translateZ(0)';
                   e.currentTarget.style.boxShadow = '0 16px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4)';
                   e.currentTarget.style.borderColor = '#64748b';
-                  e.currentTarget.style.backdropFilter = 'blur(25px) saturate(220%)';
-                  (e.currentTarget.style as any).WebkitBackdropFilter = 'blur(25px) saturate(220%)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.transform = 'translateY(0) translateZ(0)';
                   e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.1)';
                   e.currentTarget.style.borderColor = '#94a3b8';
-                  e.currentTarget.style.backdropFilter = 'blur(20px) saturate(200%)';
-                  (e.currentTarget.style as any).WebkitBackdropFilter = 'blur(20px) saturate(200%)';
                 }}
               >
                 <Stack gap="md">
